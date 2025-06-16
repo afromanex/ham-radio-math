@@ -1,0 +1,59 @@
+<h1>Peak Envelope Power</h1>
+
+
+<div class="row">
+    <div class="col">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="resistance" class="form-label">Resistance (OHMs)</label>
+                    <input [(ngModel)]="resistance" name="resistance" type="number" class="form-control" id="resistance" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="rmsVoltage" class="form-label">RMS Voltage</label>
+                    <input [(ngModel)]="rmsVoltage" name="rmsVoltage" type="number" class="form-control" id="rmsVoltage" />
+                    <br/>
+                    <div class="card">
+                        <div class="card-header">Result</div>
+                        <div class="card-body">
+                            <p [innerHTML]="rmsVoltageFormula"></p>
+                            PEP = {{rmsVoltageResult}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">OR</div>
+                <div class="col-md-3">
+                    <label for="voltagePeak" class="form-label">Peak Voltage</label>
+                    <input [(ngModel)]="peakVoltage" name="peakVoltage" type="number" class="form-control" id="voltagePeak" />
+                    <br/>
+                    <div class="card">
+                        <div class="card-header">Result</div>
+                        <div class="card-body">
+                            <p [innerHTML]="peakVoltageFormula"></p>
+                            PEP =  {{peakVoltageResult}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">OR</div>
+                <div class="col-md-3">
+                    <label for="peakToPeakVoltage" class="form-label">Peak to Peak Voltage</label>
+                    <input [(ngModel)]="peakToPeakVoltage" name="peakToPeakVoltage" type="number" class="form-control" id="peakToPeakVoltage" />
+                    <br/>
+                    <div class="card">
+                        <div class="card-header">Result</div>
+                        <div class="card-body">
+                            <p [innerHTML]="peakToPeakVoltageFormula"></p>
+                            PEP =  {{peakToPeakVoltageResult}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <br/> 
+
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+</div>

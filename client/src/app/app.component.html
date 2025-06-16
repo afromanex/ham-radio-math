@@ -1,32 +1,33 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">
-                        Formula Selection
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                        aria-expanded="false">Antennas</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                        <a class="dropdown-item" href="/antenna-half-wavelength">
-                            Antenna Half Wavelength
-                        </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="/antenna-quarter-wavelength">
-                                Antenna Quarter Wavelength
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1><a href="/">Ham Radio Formulas</a></h1>
+            </div>
         </div>
     </div>
-</div>
+</header>
+
+<nav class="main-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/antenna-dipole-calculator" routerLinkActive="active">
+                            Dipole Antenna
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/peak-envelope-power" routerLinkActive="active">
+                            Peak Envelope Power
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
 
 <div class="container">
     <div class="row">

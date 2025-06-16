@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
-import { AntennaHalfWavelengthComponent } from './pages/antenna-half-wavelength/antenna-half-wavelength.component';
-import { AntennaQuarterWavelengthComponent } from './pages/antenna-quarter-wavelength/antenna-quarter-wavelength.component';
 import { FormulaSelectionComponent } from './pages/formula-selection/formula-selection.component';
+import { AntennaDipoleCaclulatorComponent } from './pages/antenna-dipole-caclulator/antenna-dipole-caclulator.component';
+import { PeakEnvelopePowerComponent } from './peak-envelope-power/peak-envelope-power.component';
 
 export const routes: Routes = [
     { path: '', component: FormulaSelectionComponent }, 
-    { path: 'antenna-half-wavelength', component: AntennaHalfWavelengthComponent }, 
-    { path: 'antenna-quarter-wavelength', component: AntennaQuarterWavelengthComponent }
-    
+    { path: 'antenna-dipole-calculator', component: AntennaDipoleCaclulatorComponent },
+    { path: 'peak-envelope-power', component: PeakEnvelopePowerComponent }
 ];

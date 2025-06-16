@@ -1,0 +1,75 @@
+<h1>Dipole Antenna Length Calculator</h1>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="row">
+            <div class="col">
+                <h4>1/2 wavelength</h4>
+                <p [innerHTML]="halfWavelengthformula"></p>
+            </div>
+            <div class="col">
+                <h4>1/4 wavelength</h4>
+                <p [innerHTML]="quarterWavelengthformula"></p>
+            </div>
+        </div>
+        
+
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="mb-3">
+                <label for="frequencyMHz" class="form-label">Frequency (in MHz)</label>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(52)">6m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(29)">10m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(24)">12m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(21.2)">15m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(18.11)">17m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(14.150)">20m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(10.1)">30m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(7.125)">40m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(5.3585)">60m</button>&nbsp;
+                    <button type="button" class="btn btn-light" (click)="onSetFrequency(3.6)">80m</button>
+                </div>
+
+                <input type="number" class="form-control" id="frequencyMHz" name="frequencyMHz" [(ngModel)]="frequency"
+                    aria-describedby="frequencyMHzDescribedBy" ngModel required>
+            </div>
+
+            <div class="mb-3">
+                <label for="frequencyMHz" class="form-label">Wavelengths</label>
+
+                <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="wavelengthMultiplier" type="radio" value="1" name="wavelength" id="halfWavelength" checked>
+                    <label class="form-check-label" for="halfWavelength">
+                        1/2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="wavelengthMultiplier" type="radio" value=".5" name="wavelength" id="quarterWavelength">
+                    <label class="form-check-label" for="quarterWavelength">
+                        1/4
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+
+        <br />
+        <br />
+
+        <div class="card">
+            <div class="card-header">Results</div>
+            <div class="card-body">
+                <p [innerHTML]="result" style="text-align: center;"></p>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yRnlJxMWzF4?si=JPSrM_-aZ_XqKVrJ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>

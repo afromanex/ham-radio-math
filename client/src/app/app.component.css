@@ -1,0 +1,19 @@
+header.main-header {
+    background: #000080; 
+    padding: 1em 0;
+}
+
+header.main-header a { 
+    color: #fff; 
+    text-decoration: none;
+}
+
+header.main-header a:hover {
+    color: #ddd; 
+}
+
+nav.main-nav { 
+    margin-bottom: 2em;
+    border-bottom: 1px solid #ddd;
+    padding: 1em 0;
+}
