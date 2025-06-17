@@ -47,16 +47,36 @@ export class PeakEnvelopePowerComponent implements AfterViewInit {
   }
 
   onSubmit(form: any) {
-    if (this.resistance == null) return;
+    // Resistance. 
+    if (this.resistance == null) {
+      this.rmsVoltageResult = undefined; 
+      this.peakVoltageResult = undefined; 
+      this.peakToPeakVoltageResult = undefined; 
+      return;
+    }
 
+    // RMS Voltage.
     if (this.rmsVoltage != null) {
       this.rmsVoltageResult = this.rmsVoltage ** 2 / this.resistance;
     }
+    else{
+      this.rmsVoltageResult = undefined; 
+    }
+
+    // Peak Voltage. 
     if (this.peakVoltage != null) {
       this.peakVoltageResult = ((this.peakVoltage * .707) ** 2) / this.resistance;
     }
+    else {
+      this.peakVoltageResult = undefined; 
+    }
+
+    // Peak to Peak Voltage. 
     if (this.peakToPeakVoltage != null) {
       this.peakToPeakVoltageResult = ((this.peakToPeakVoltage / 2 * .707) ** 2) / this.resistance;
+    }
+    else {
+      this.peakToPeakVoltageResult = undefined; 
     }
   }
 
